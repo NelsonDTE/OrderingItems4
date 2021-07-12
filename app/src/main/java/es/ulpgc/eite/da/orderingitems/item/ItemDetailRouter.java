@@ -12,8 +12,7 @@ public class ItemDetailRouter implements ItemDetailContract.Router {
   public static String TAG = ItemDetailRouter.class.getSimpleName();
 
   private AppMediator mediator;
-  private ListToDetailState listToDetailState;
-  private DetailToListState detailToListState;
+
 
   public ItemDetailRouter(AppMediator mediator) {
     this.mediator = mediator;
@@ -23,14 +22,14 @@ public class ItemDetailRouter implements ItemDetailContract.Router {
   @Override
   public void passStateToPreviousScreen(DetailToListState state) {
     //TODO: falta implementacion
-    detailToListState = state ;
+    state = mediator.detailToListState ;
   }
 
   @Override
   public ListToDetailState getStateFromPreviousScreen() {
     //TODO: falta implementacion
-      ListToDetailState state = listToDetailState;
-      listToDetailState = null;
+      ListToDetailState state = mediator.listToDetailState;
+      mediator.listToDetailState = null;
     return state;
   }
 

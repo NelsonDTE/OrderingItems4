@@ -11,7 +11,8 @@ public class AppMediator {
   private ItemDetailState itemDetailState;
   private ItemListState itemListState;
 
-
+  public ListToDetailState listToDetailState;
+  public DetailToListState detailToListState;
 
 
 

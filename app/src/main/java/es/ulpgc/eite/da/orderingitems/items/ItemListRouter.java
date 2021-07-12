@@ -10,6 +10,7 @@ public class ItemListRouter implements ItemListContract.Router {
 
   private AppMediator mediator;
 
+
   public ItemListRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
@@ -17,12 +18,15 @@ public class ItemListRouter implements ItemListContract.Router {
   @Override
   public DetailToListState getStateFromNextScreen() {
     //TODO: falta implementacion
-    return null;
+    DetailToListState state = mediator.detailToListState;
+    mediator.detailToListState = null;
+    return state;
   }
 
   @Override
   public void passStateToNextScreen(ListToDetailState state) {
     //TODO: falta implementacion
+    mediator.listToDetailState = state;
   }
 
 

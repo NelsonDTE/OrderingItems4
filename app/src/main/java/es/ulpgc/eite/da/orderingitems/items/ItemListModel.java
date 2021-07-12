@@ -1,5 +1,7 @@
 package es.ulpgc.eite.da.orderingitems.items;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +48,7 @@ public class ItemListModel implements ItemListContract.Model {
   @Override
   public void onAddNewData() {
     //TODO: falta implementacion
+    dataSource.add(new ItemData(letters.toString(),dataIndex));
   }
 
 
@@ -54,6 +57,10 @@ public class ItemListModel implements ItemListContract.Model {
     // Log.e(TAG, "onDataFromNextScreen()");
 
     //TODO: falta implementacion
+
+    Log.e(TAG, "posición: "+clicks);
+    data.position = clicks;
+    dataSource.set(dataSource.indexOf(data), data);
 
   }
 
