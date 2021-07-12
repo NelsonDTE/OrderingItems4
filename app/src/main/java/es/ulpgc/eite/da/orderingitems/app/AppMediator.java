@@ -12,6 +12,9 @@ public class AppMediator {
   private ItemListState itemListState;
 
 
+
+
+
   private AppMediator() {
     itemDetailState= new ItemDetailState();
     itemListState = new ItemListState();

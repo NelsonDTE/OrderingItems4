@@ -39,5 +39,11 @@ public class ItemDetailModel implements ItemDetailContract.Model {
   public void onIncrPosition() {
 
     //TODO: falta implementacion
+    if(data.position == listSize){
+      data.position=0;
+    }else{
+      data.position= data.position+1;
+    }
+
   }
 }
